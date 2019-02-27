@@ -1,5 +1,5 @@
 # photo-damage-assessment
-Estimate of damage associated with a vehicle using deep learning
+Estimate damage associated with a vehicle using deep learning
 
 Background:
 Whenever an accident happens and damage occurs, client reports the incident and requests for compensation of the damage to the insurance company. The claim is then assigned to a claim adjuster who investigates the circumstances and works on getting the claim settled by repairing the vehicle. </br>
