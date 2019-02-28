@@ -175,27 +175,26 @@ def init_model(tabular_features_num):
     merged_model = concatenate(
         [image_model_output, tabular_data_input], axis=1)
 
-    merged_model = BatchNormalization()(merged_model)
     merged_model = Dense(4096, activation='relu',
         kernel_regularizer=regularizers.l2(0.0001))(merged_model)
     merged_model = Dropout(0.5)(merged_model)
-    merged_model = BatchNormalization()(merged_model)
+
     merged_model = Dense(1024, activation='relu',
         kernel_regularizer=regularizers.l2(0.0001))(merged_model)
     merged_model = Dropout(0.5)(merged_model)
-    merged_model = BatchNormalization()(merged_model)
+
     merged_model = Dense(512, activation='relu',
         kernel_regularizer=regularizers.l2(0.0001))(merged_model)
     merged_model = Dropout(0.5)(merged_model)
-    merged_model = BatchNormalization()(merged_model)
+
     merged_model = Dense(256, activation='relu',
         kernel_regularizer=regularizers.l2(0.0001))(merged_model)
     merged_model = Dropout(0.5)(merged_model)
-    merged_model = BatchNormalization()(merged_model)
+
     merged_model = Dense(128, activation='relu',
         kernel_regularizer=regularizers.l2(0.0001))(merged_model)
     merged_model = Dropout(0.5)(merged_model)
-    merged_model = BatchNormalization()(merged_model)
+
     predictions = Dense(1, activation ='linear')(merged_model)
 
     # Now create the model
